@@ -1,7 +1,6 @@
 const btnSearch = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-box input");
 const cardWrapper = document.querySelector(".content-main__list");
-const cardLink = document.querySelector("a");
 
 const cardArray = [
   {
@@ -98,4 +97,7 @@ cardWrapper.style.gap = "30px";
 btnSearch.addEventListener("click", () => {
   render(filterArray(cardArray, searchInput.value));
 });
-console.log(cardLink);
+const cardLink = document.querySelector(".content-main__list-item");
+cardLink.addEventListener("click", () => {
+  render(cardLink.href);
+});
