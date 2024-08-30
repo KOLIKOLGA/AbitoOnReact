@@ -1,6 +1,7 @@
 const btnSearch = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-box input");
 const cardWrapper = document.querySelector(".content-main__list");
+const cardLink = document.querySelector("a");
 
 const cardArray = [
   {
@@ -10,6 +11,7 @@ const cardArray = [
     address: "Казань, р-н Вахитовский",
     date: "10 июля 11:39",
     img: "./images/card-img.png",
+    href: "/product.html",
   },
   {
     id: 1,
@@ -18,6 +20,7 @@ const cardArray = [
     address: "Казань, р-н Вахитовский",
     date: "10 июля 11:39",
     img: "./images/card-img.png",
+    href: "/product.html",
   },
   {
     id: 2,
@@ -26,6 +29,7 @@ const cardArray = [
     address: "Казань, р-н Вахитовский",
     date: "10 июля 11:39",
     img: "./images/card-img.png",
+    href: "/product.html",
   },
   {
     id: 3,
@@ -34,6 +38,7 @@ const cardArray = [
     address: "Казань, р-н Вахитовский",
     date: "10 июля 11:39",
     img: "./images/card-img.png",
+    href: "/product.html",
   },
   {
     id: 4,
@@ -42,6 +47,7 @@ const cardArray = [
     address: "Казань, р-н Вахитовский",
     date: "10 июля 11:39",
     img: "./images/card-img.png",
+    href: "/product.html",
   },
   {
     id: 5,
@@ -50,6 +56,7 @@ const cardArray = [
     address: "Казань, р-н Вахитовский",
     date: "10 июля 11:39",
     img: "./images/card-img.png",
+    href: "/product.html",
   },
 ];
 
@@ -59,7 +66,7 @@ const render = (cardList) => {
     cardWrapper.insertAdjacentHTML(
       "beforeend",
       `
-      <a href="/product.html" class="content-main__list-item">
+      <a href="${item.href}" class="content-main__list-item">
             <div class="content-main__list-item_image">
                 <img src="${item.img}" alt="${item.title}" />
             </div>
@@ -91,3 +98,4 @@ cardWrapper.style.gap = "30px";
 btnSearch.addEventListener("click", () => {
   render(filterArray(cardArray, searchInput.value));
 });
+console.log(cardLink);
